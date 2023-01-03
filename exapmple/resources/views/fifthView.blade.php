@@ -1,0 +1,1 @@
+<h1>hodnota parametra: {{$result}}</h1>
