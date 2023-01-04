@@ -40,3 +40,7 @@ Route::post('send', [App\Http\Controllers\SimpleController::class, 'sendData']);
 Route::get('/six', function () {
     return view('sixView');
 });
+
+
+Route::get('departments', [App\Http\Controllers\DepartmentController::class,
+'index']);
