@@ -40,7 +40,7 @@ Route::post('send', [App\Http\Controllers\SimpleController::class, 'sendData']);
 Route::get('/six', function () {
     return view('sixView');
 });
-
+//prednaska02
 Route::get('/index', function () {
     return view('index');
 });
@@ -52,6 +52,8 @@ Route::get('/home', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
-
+//prednaska03
 Route::get('departments', [App\Http\Controllers\DepartmentController::class,
 'index']);
+//prednaska04
+Route::resource('departments', App\Http\Controllers\DepartmentController::class);

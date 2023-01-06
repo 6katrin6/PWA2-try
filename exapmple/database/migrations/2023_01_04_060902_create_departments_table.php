@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id(); 
             $table->string('name');
             $table->timestamps();
+            $table->integer('number_employees')->default(0);
         });
+        
     }
 
     /**
@@ -28,5 +30,6 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('departments');
+        $table->dropColumn('number_employees');
     }
 };
