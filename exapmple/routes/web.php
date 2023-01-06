@@ -41,6 +41,17 @@ Route::get('/six', function () {
     return view('sixView');
 });
 
+Route::get('/index', function () {
+    return view('index');
+});
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 Route::get('departments', [App\Http\Controllers\DepartmentController::class,
 'index']);
