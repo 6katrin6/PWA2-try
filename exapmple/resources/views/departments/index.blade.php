@@ -5,6 +5,7 @@
 <table class="table table-striped table-bordered">
 @foreach ($departments as $d)
 <tr>
+<td>{{$d->id}}</td>
 <td>{{$d->name}}</td>
 <td>{{$d->abbreviation}}</td>
 </tr>
