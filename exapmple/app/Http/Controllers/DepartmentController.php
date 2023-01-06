@@ -15,17 +15,17 @@ class DepartmentController extends Controller
     public function index()
     {
         //prednaska03
-        $departments = Department::all(); // vytiahnut z databazy
+        //$departments = Department::all(); // vytiahnut z databazy
         // $departments = Department::orderBy('name','acs')->get(); // zoradit podla abecedy
-        return view('departments.index')->with('departments', $departments);
-        }
+        //return view('departments.index')->with('departments', $departments);
+        //}
         // prednaska04
-        $dep = Department::all();
+        $dep = Department::orderBy('name', 'asc')->get();
         $depInfo['count'] = $dep->count();
         $depInfo['number_employees'] = $dep->sum('number_employees');
         $depInfo['average'] = $dep->average('number_employees');
-        return view('departments.index')->with('departments', $dep)->with('depInfo',
-        $depInfo);
+        return view('departments.index')->with('departments', $dep)->with('depInfo', $depInfo);
+
     }
 
     /**
@@ -57,6 +57,13 @@ class DepartmentController extends Controller
             'abbreviation' => $request['abbreviation'],
             'number_employees' => $request['number_employees'],
             ]);
+
+        // $d = NEW Department;
+        // $d->name                = $request->name;
+        // $d->abbreviation        = $request->abbreviation;
+        // $d->number_employees    = $request->number_employees;
+        // $d->save();
+        // $d->last_id();
             return redirect()->route('departments.index');
     }
 

@@ -57,3 +57,7 @@ Route::get('departments', [App\Http\Controllers\DepartmentController::class,
 'index']);
 //prednaska04
 Route::resource('departments', App\Http\Controllers\DepartmentController::class);
+// pod tymti bude zaheslovane, to co je smerom hore je odheslovane
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

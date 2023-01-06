@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
   <div class="row">
-    
+
     <div class="col-8">
 
       {{Form::open(['route' => 'departments.store'])}}
@@ -19,11 +19,11 @@
 
 
       {{ Form::submit('Submit', array('class' => 'btn btn-sm btn-primary')) }}
-      
+
       {{Form::close()}}
-      
+
     </div>
-    
+
   </div>
 </div>
 @endsection
