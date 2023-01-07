@@ -13,7 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    {{-- in blade --}}
+                    {{-- {{Auth::user()->name}} --}}
+                    {{Auth::user()->first_name}}&nbsp;{{Auth::user()->last_name}}
+                    {{Auth::user()->full_name}} {{-- must be declared in Model --}}
                     {{ __('You are logged in!') }}
                 </div>
             </div>

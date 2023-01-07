@@ -25,6 +25,9 @@ class DepartmentController extends Controller
         $depInfo['number_employees'] = $dep->sum('number_employees');
         $depInfo['average'] = $dep->average('number_employees');
         return view('departments.index')->with('departments', $dep)->with('depInfo', $depInfo);
+        //prednsak05
+        // DepartmentController function index()
+        $dep = Department::with('director')->orderBy('name', 'asc')->get();
 
     }
 

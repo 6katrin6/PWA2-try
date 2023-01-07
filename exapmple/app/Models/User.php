@@ -36,9 +36,15 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      *
-     * @var array<string, string>
+     * @var array<string, string>x
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getFullNameAttribute(){
+        return $this->first_name.' '.$this->last_name;
+        }
+
+        
 }
